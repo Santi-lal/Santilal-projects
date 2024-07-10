@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.netflix{
+    background-image: url(Netflix\ background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+#image{ height: 70px;
+    width: 70px;
+
+   
+}
+button{
+    background-color: red;
+    text-align: center;
+    border: 2px solid black;
+    position: relative ;
+    top: 10px;
+    float: right;
+    margin: 5px;
+    display: flex;
+}
+#h2{
+    color: red;
+    text-transform: capitalize;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    top: 130px;
+    right: 80px;
+
+}
+#p{
+    color: yellow;
+    text-transform: capitalize;
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+    top: 130px;
+    right: 100px;
+}
+form{
+    font-size: 30px;
+    color: crimson;
+    position: relative;
+    top: 150px;
+    text-align: center;
+}
+#butt{
+    color: black;
+    background-color:red;
+    position: relative;
+    text-align: center;
+    right: 450px;
+}
