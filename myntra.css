@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    background-color:blanchedalmond;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #b6b1b1;
+}
+
+.myntra_logo{
+    height: 40px;
+    padding: 2px 2px;
+    
+}
+.logo{
+    margin-left: 4%;
+}
+.action_bar{
+    margin-right: 4%;
+}
+.nav_bar{
+    display: flex;
+    min-width: 500px;
+    justify-content: space-evenly;
+
+}
+.nav_bar a{
+    font-size: 14px;
+    letter-spacing: .3px;
+    color:rgb(56, 56, 112);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+}
+.nav_bar a sup{
+    color: red;
+    font-size: 10px;
+}.nav_bar a:hover{
+    border-bottom: 2px solid rgb(144, 3, 26);
+}
+.search_bar{
+    display: flex;
+    align-items: center;
+    min-width: 400px;
+}
+.search_input{
+    color: rgb(227, 133, 19);
+    background-color: bisque;
+    height: 20px;
+    min-width: 200px;
+    border-radius: 20px;
+    border: 0;
+}
+.search_icon{
+    background-color:black;
+    height: 20px;
+   
+}
+.action_icon{
+    height: 20px;
+    background-color: aquamarine;
+}
+.action_bar{
+    display: flex;
+    min-width: 200px;
+    
+    justify-content: space-evenly;
+}
+.action_icon{
+    height: 15px;
+    align-items: center;
+    margin: 3px;
+    position: relative;
+    left: 7px;
+}
+.action_name{
+    align-items: center;
+    
+}
+/* Main Section */
+.banner_container{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.banner_image{
+    width: 20%;
+   
+}
+.catagory_heading{
+    padding: 10px;
+}
+.heading{
+    font-size: medium;
+    font-weight: 900;
+    color: black;
+    text-transform: uppercase;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+}
+.catagory_items{
+    margin: 10px 0px;
+    display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+}
+.sales_items{
+    width: 250px;
+    
+}
+.catagory_heading{
+    font-size: medium;
+    font-weight: 900;
+    color: black;
+    text-transform: uppercase;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+}
+.catagory_itemstwo{
+   margin: 10px 0px;
+   display: flex;
+   justify-content: space-evenly; 
+   flex-wrap: wrap;
+}
+.csales_items{
+    width: 250px;
+
+}
+.footer_container{
+    padding: 30px 0px 40px 0px;
+    background: #fafbfc;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.footer_column {
+    display: flex;
+    flex-direction:column;
+}
+.footer_column a{
+    color:#696b79;
+    font-size: 15px;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+footer{
+    display: flex;
+    justify-content: space-evenly;
+}
