@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cricket game using func</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .choice-image{
+          height: 70px;
+          width: 70px;
+          border: 3px solid black;
+          border-radius: 5px;
+          padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="heading">Bat Ball Stump Game!!</h1>
+   
+
+    <button  onclick="
+    let computerChoice = generatecomputerchoice();
+    let userMove;
+     let resultofGame= getResult('bat',computerChoice);
+     showResult('bat', computerChoice,resultofGame);
+    "><img src="bat.jpg" alt="bat-image" class="choice-image"></button>
+
+     <button onclick="
+    computerChoice = generatecomputerchoice();   
+    resultofGame= getResult('ball',computerChoice);
+    showResult('ball', computerChoice,resultofGame);
+     "><img src="ball.jpeg" alt="ball-image" class="choice-image"></button>
+
+
+  <button onclick="
+computerChoice=generatecomputerchoice();   
+resultofGame = getResult('stump',computerChoice);
+showResult('stump', computerChoice,resultofGame);
+ "><img src="stump.jpeg" alt="stump-image" class="choice-image"></button>
+
+  <button onclick="localStorage.clear()
+  resetScore();">Reset</button>
+
+  <h2 id="user-move"></h2>
+  <h2 id="computer-move"></h2>
+  <h2 id="result"></h2>
+  <h2 id="score"></h2>
+
+
+    <script>
+     let scoreStr = localStorage.getItem('Score');
+     let Score;
+     resetScore(scoreStr);
+     function resetScore(scoreStr){
+    
+      Score=scoreStr ?JSON.parse(scoreStr) :
+     {
+      win :0,
+      loss:0,
+      tie:0, 
+     };
+     Score.displayScore=function(){
+        return ` score :win${Score.win}, loss ${Score.loss} , ties ${Score.tie}`;
+       };
+       showResult();
+      }
+
+    function generatecomputerchoice()
+    {    
+    let randomNumber = Math.random()*3; 
+      if(randomNumber >0 && randomNumber<=1)
+      {
+        return 'bat';
+      }
+      else if(randomNumber >1 && randomNumber <=2)
+      {
+        return 'ball';
+      }
+      else 
+      {
+        return 'stump';
+      }
+    }
+
+    function getResult(userMove,computerMove)
+    {
+       if(userMove==='bat')
+       {
+      if(computerMove==='bat')
+       {
+        Score.tie++;
+        return 'match tied';
+         
+       }
+       else if(computerMove==='ball')
+       {
+         Score.win++;
+         return 'user won';
+       }
+       else( computerMove==='stump')
+       {
+        Score.loss++;
+        return 'computer won';
+       }
+       }
+
+       else if(userMove==='ball')
+       {
+        if(computerMove==='bat')
+       {
+        Score.loss++;
+        return 'computer won';
+       }
+       else if( computerMove==='ball')
+       {
+        Score.tie++;
+         return 'match tied';
+       }
+       else( computerMove==='stump')
+       {  Score.win++;
+        return 'user won';
+       }
+       }
+       else
+       {
+        if( computerMove==='bat')
+       {
+        Score.win++;
+        return 'user won';
+       }
+       else if( computerMove==='ball')
+       {
+        Score.loss++;
+         return 'computer won';
+       }
+       else( computerMove==='stump')
+       {
+        Score.tie++;
+        return 'match tied';
+       }
+       }
+    }
+
+    function showResult(userMove,computerMove,result)
+    {
+      localStorage.setItem('Score',JSON.stringify(Score));
+      document.querySelector('#user-move').innerText =
+      userMove !==undefined ? `i have choose ${userMove}` : '';
+
+      document.querySelector('#computer-move').innerText =
+      computerMove !== undefined ? `computer choice is ${computerMove}` : '';
+
+      document.querySelector('#result').innerText = 
+      result !== undefined ? `result is ${result}` : '';
+
+      document.querySelector('#score').innerText = ` ${Score.displayScore()}`;  
+    }
+    </script>
+</body>
+</html>
